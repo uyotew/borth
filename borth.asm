@@ -62,7 +62,8 @@ section .rodata
 name_%3:
         dq link ; pointer to next word    
         %define link name_%3
-        db %2 + %strlen(%1) ; flags/length of name
+        %strlen len_%3 %1
+        db %2 + len_%3 ; flags/length of name
         db %1 ; word name
         align 8, db 0
 %3:
@@ -81,7 +82,8 @@ section .rodata
 name_%3:
         dq link ; pointer to next word    
         %define link name_%3
-        db %2 + %strlen(%1) ; flags/length of name
+        %strlen len_%3 %1
+        db %2 + len_%3 ; flags/length of name
         db %1 ; word name
         align 8, db 0
 %3:
